@@ -1,6 +1,7 @@
 const express = require("express")
 const app = express()
 const path = require("path")
+require("dotenv").config()
 const apiKey = "csAuHJH6gDN0lky/JKCCvw==dNu9a0GPs8LG06qw"
 const cors = require("cors")
 const Redis = require("ioredis");
@@ -47,6 +48,6 @@ app.get("/details", async(req, res)=>{
    
 })
 
-app.listen(3000, ()=>{
+app.listen(process.env.port, ()=>{
     console.log("server is running")
 })
